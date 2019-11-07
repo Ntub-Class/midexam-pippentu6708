@@ -4,3 +4,30 @@
 // Bird class說明: 請複寫父類別的eat方法，呼叫Bird的eat方法時必須先印出 I override it，
 //  然後再呼叫父類別的eat 輸出 I'm {name} , I can eat~~
 // 最後請建立一個Bird實體，並呼叫eat跟fly方法
+class anical {
+    constructor(
+        public name: string
+    ) {
+    }
+    eat() {
+        console.log('I\'m', this.name, ', I can eat~~')
+    }
+}
+
+class bird extends anical {
+    constructor(name: string, public color: string) {
+        super(name)
+    }
+    fly() {
+        console.log('I can Fly')
+    }
+    eat() {
+        console.log('I override it')
+        super.eat()
+    }
+}
+
+let bird01 = new bird('pippentu', 'Blue');
+console.log(bird01);
+bird01.eat();
+bird01.fly();
